@@ -24,10 +24,7 @@ messageInput.value = savedFormState.message;
 function onFormSubmit (event) {
   event.preventDefault();
   
-  const emailValue = emailInput.value;
-  const messageValue = messageInput.value;
-  
-  if (!emailValue || !messageValue) {
+  if (!emailInput.value || !messageInput.value) {
     alert('Всі поля мають бути заповненні.');
     return;
   }
