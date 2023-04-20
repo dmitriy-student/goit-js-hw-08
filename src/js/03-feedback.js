@@ -22,16 +22,25 @@ messageInput.value = savedFormState.message;
 }
 
 function onFormSubmit (event) {
-    event.preventDefault();
+  event.preventDefault();
+  
+  const emailValue = emailInput.value;
+  const messageValue = messageInput.value;
+  
+  if (!emailValue || !messageValue) {
+    alert('Всі поля мають бути заповненні.');
+    return;
+  }
 
-    localStorage.removeItem('feedback-form-state');
-    emailInput.value = '';
-    messageInput.value = '';
+  localStorage.removeItem('feedback-form-state');
+  emailInput.value = '';
+  messageInput.value = '';
+  console.log(formState);
 };
 
 const formState = {
-    email: emailInput.value,
-    message: messageInput.value
-  };
+  email: emailInput.value,
+  message: messageInput.value
+};
 
-console.log(formState);
+
